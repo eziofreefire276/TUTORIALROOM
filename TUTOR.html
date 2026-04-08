@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Room FT CS - Premium Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --glass-bg: rgba(255, 255, 255, 0.5);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f8fafc;
+            min-height: 100vh;
+            color: #0f172a;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated Liquid Background */
+        .liquid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        }
+
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(20%, 20%); }
+        }
+
+        /* Glassmorphism Styles */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 24px;
+            background: #1e293b;
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tag {
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .pulse {
+            animation: pulse-animation 2s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0px rgba(59, 130, 246, 0.4); }
+            100% { box-shadow: 0 0 0 20px rgba(59, 130, 246, 0); }
+        }
+    </style>
+</head>
+<body class="py-12 px-4">
+    <div class="liquid-bg">
+        <div class="blob"></div>
+    </div>
+
+    <main class="max-w-4xl mx-auto space-y-8 relative">
+        <!-- Header -->
+        <div class="text-center space-y-4">
+            <span class="inline-block tag bg-blue-100 text-blue-600">Video Guide</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight gradient-text">Tutorial Room FT CS</h1>
+            <p class="text-slate-500 font-medium">Langkah tepat membuat room agar permainan lancar tanpa drama</p>
+        </div>
+
+        <!-- Video Section -->
+        <div class="glass-panel p-6 md:p-10 space-y-10">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-1.5 h-8 bg-blue-600 rounded-full"></div>
+                    <h2 class="text-2xl font-bold text-slate-800 tracking-tight">Tonton Tutorial Disini</h2>
+                </div>
+                
+                <div class="video-wrapper">
+                    <!-- Link video contoh (Ganti dengan link video Anda jika sudah ada) -->
+                    <iframe 
+                        src="TUTOR.mp4" 
+                        title="YouTube video player" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Detailed Instructions -->
+            <div class="space-y-8">
+                <div class="text-center py-4">
+                    <p class="text-xl md:text-2xl font-black text-blue-600 uppercase italic tracking-tighter pulse inline-block px-6 py-2 rounded-2xl bg-blue-50">
+                        HARAP TONTON VID BAGI YANG TIDAK BISA OPR
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="step-card md:col-span-2 border-l-4 border-l-blue-600">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="tag bg-blue-600 text-white">Langkah Utama</span>
+                        </div>
+                        <p class="text-lg font-bold text-slate-800">
+                            Caranya yaitu pilih modenya kompetitif, ronde diganti menjadi 13, koin diganti menjadi 1500
+                        </p>
+                    </div>
+
+                    <div class="step-card border-l-4 border-l-amber-400">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="tag bg-amber-100 text-amber-600">Aturan Dasar</span>
+                        </div>
+                        <p class="font-bold text-slate-600 italic leading-relaxed">
+                            YANG DIBAWAH DI DIEMIN KECUALI ATRIBUT (ATRIBUTNYA DI MATIKAN/OFFIN)
+                        </p>
+                    </div>
+
+                    <div class="step-card border-l-4 border-l-cyan-400">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="tag bg-cyan-100 text-cyan-600">Posisi Player</span>
+                        </div>
+                        <p class="font-bold text-slate-600 italic leading-relaxed">
+                            DISARANKAN YANG OPR PINDAH KE KANAN
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Footer Alert Card -->
+                <div class="bg-gradient-to-r from-blue-600 to-blue-800 p-8 rounded-[30px] text-center shadow-2xl shadow-blue-200">
+                    <h3 class="text-white font-black text-xl md:text-2xl uppercase leading-tight">
+                        SALAH BIKIN ROOM BOLEH RM DENGAN SYARAT BELUM DAMAGE
+                    </h3>
+                    <p class="text-blue-100 mt-2 text-sm font-medium opacity-80 uppercase tracking-widest">Patuhi Peraturan Agar Adil</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Info -->
+        <div class="flex flex-col items-center gap-6 pt-6">
+            <div class="flex gap-4">
+                <div class="w-12 h-1 bg-blue-200 rounded-full"></div>
+                <div class="w-12 h-1 bg-blue-400 rounded-full"></div>
+                <div class="w-12 h-1 bg-blue-200 rounded-full"></div>
+            </div>
+            <p class="text-blue-400 text-xs font-black uppercase tracking-[0.3em]">Official Guide By Renz Management</p>
+        </div>
+    </main>
+</body>
+</html>
+
+```
